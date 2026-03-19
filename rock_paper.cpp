@@ -10,9 +10,13 @@
 
 int main ()
 {
+    
     char player;
     char computer;
+    char playagain;
+    
 
+     do{
     player = getuserchoice();
     std::cout << " your choice : ";
     showchoice(player);
@@ -23,10 +27,18 @@ int main ()
     
 
     choosewinner(player, computer);
+    
+    std::cout << " \nplay again? : \n";
+    std::cin >> playagain;
+    playagain = tolower(playagain);
+    
+    std::cout << "\n";
 
+    }while(playagain == 'y');
+    
+    std::cout << " salamat ssa laro \n";
 
-
-   return 0;
+   return player;
 
 
 }
@@ -45,7 +57,7 @@ int main ()
                  std::cout << "'r' is for rock \n";
                  std::cout << "'p' is for paper\n";
                  std::cout << "'s' is for scissors \n";
-        std::cin >> player;
+                 std::cin >> player;
     }while(player != 'r' && player != 'p' && player != 's');
 
     return player;
@@ -120,4 +132,3 @@ switch (choice){
 
 
     }
-
